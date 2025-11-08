@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kartik Krish — Portfolio</title>
+  <meta name="description" content="Portfolio of Kartik Krish — soft, elegant design. HTML + CSS only." />
+
+  <style>
+    /* ========== Base / Reset ========== */
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --muted:#64707a;
+      --accent1:#9ad3ff;
+      --accent2:#c9b6ff;
+      --glass: rgba(255,255,255,0.6);
+      --radius:20px;
+      --shadow: 0 10px 30px rgba(22,30,40,0.07);
+      --fw-heading: 700;
+      --fw-body: 400;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 400px at 10% 10%, rgba(154,211,255,0.08), transparent 8%),
+                  radial-gradient(900px 300px at 90% 90%, rgba(201,182,255,0.06), transparent 6%),
+                  var(--bg);
+      color:#102027;
+      line-height:1.45;
+      padding:48px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 380px 1fr;
+      gap:32px;
+    }
+
+    /* ========== Sidebar ========== */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+    }
+
+    .profile{display:flex;gap:18px;align-items:center}
+    .avatar{
+      width:88px;height:88px;border-radius:18px;flex-shrink:0;
+      background: linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:grid;place-items:center;color:#fff;font-weight:700;font-size:28px;
+    }
+    .name {font-size:18px;font-weight:700}
+    .role{color:var(--muted);font-size:13px;margin-top:4px}
+    .bio{margin-top:18px;color:#334a55;font-size:14px}
+
+    .info-list{margin-top:18px;display:grid;gap:10px;font-size:14px;color:var(--muted)}
+    .info-item{display:flex;gap:10px;align-items:center}
+    .pill{background:#f2f7fb;padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px;color:#155}
+
+    .socials{margin-top:18px;display:flex;gap:10px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;text-decoration:none;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--accent2),var(--accent1))}
+
+    .download{display:flex;gap:12px;margin-top:20px}
+    .btn{padding:10px 14px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background: linear-gradient(90deg, var(--accent1), var(--accent2));color:#062230}
+    .btn-ghost{background:transparent;border:1px solid rgba(16,32,39,0.06);color:var(--muted)}
+
+    /* ========== Main content ========== */
+    .main{display:flex;flex-direction:column;gap:24px}
+
+    .intro{
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86));
+      border-radius: var(--radius);
+      padding:26px;
+      box-shadow: var(--shadow);
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .intro-left{max-width:68%}
+    h1{font-size:22px;margin-bottom:8px;font-weight:var(--fw-heading)}
+    p.lead{color:#344b56;font-size:15px}
+
+    .metrics{display:flex;gap:12px}
+    .metric{background:linear-gradient(180deg, #fff, #fdfdfd); padding:10px 14px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(16,32,39,0.04)}
+    .metric h3{font-size:18px;margin-bottom:4px}
+    .metric p{color:var(--muted);font-size:13px;margin:0}
+
+    /* Sections */
+    section.card{padding:22px}
+    section h2{font-size:16px;margin-bottom:12px}
+    .skills{display:flex;flex-wrap:wrap;gap:12px}
+    .skill{background:#f3f5f7;padding:8px 12px;border-radius:12px;font-weight:600;font-size:13px;color:#0b2b33}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{background:#fff;border-radius:14px;padding:14px;box-shadow:0 6px 20px rgba(16,32,39,0.04)}
+    .project h3{margin-bottom:8px;font-size:15px}
+    .project p{color:var(--muted);font-size:13px;margin-bottom:12px}
+    .project .tag{display:inline-block;padding:6px 10px;border-radius:10px;font-size:12px;background:#eef6ff;color:#0a3b56;font-weight:700}
+
+    .contact-form{display:grid;grid-template-columns:1fr 120px;gap:12px}
+    .contact-form input, .contact-form textarea{width:100%;padding:12px;border:1px solid rgba(16,32,39,0.06);border-radius:10px;font-size:14px}
+    .contact-form button{padding:12px;border-radius:10px;border:0;font-weight:700}
+
+    footer{margin-top:10px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:980px){
+      .wrap{grid-template-columns: 1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .contact-form{grid-template-columns:1fr}
+    }
+
+    .avatar, .btn-primary, .project{transition:transform .28s ease, box-shadow .28s ease}
+    .avatar:hover{transform:translateY(-4px)}
+    .btn-primary:hover{transform:translateY(-3px)}
+    .project:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(16,32,39,0.08)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- SIDEBAR -->
+    <aside class="card">
+      <div class="profile">
+        <div class="avatar">KK</div>
+        <div>
+          <div class="name">Kartik Krish</div>
+          <div class="role">Software Developer — Frontend & Web</div>
+        </div>
+      </div>
+
+      <p class="bio">Hi — I'm Kartik. I build clean, accessible web experiences with a focus on elegant UI and thoughtful interactions.</p>
+
+      <div class="info-list">
+        <div class="info-item"><span class="pill">Based in</span><span style="margin-left:auto">India</span></div>
+        <div class="info-item"><span class="pill">Email</span><span style="margin-left:auto">kartikkrish22@gmail.com</span></div>
+        <div class="info-item"><span class="pill">Phone</span><span style="margin-left:auto">+91 9798**64</span></div>
+        <div class="info-item"><span class="pill">Availability</span><span style="margin-left:auto">Open to work</span></div>
+      </div>
+
+      <div class="socials">
+        <a href="github.com/kartikkrish">GH</a>
+        <a href="linkedin.com/in/kartikkrish">IN</a>
+        <a href="https://www.instagram.com/just_karrthik/">IG</a>
+      </div>
+
+      <div class="download">
+        <a class="btn btn-primary" href="spaces.html">Extra Mile</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+      <section class="intro">
+        <div class="intro-left">
+          <h1>Designing thoughtful interfaces & building delightful front-end experiences</h1>
+          <p class="lead">I turn product ideas into fast, accessible websites and web apps.</p>
+        </div>
+        <div class="metrics">
+          <div class="metric"><h3>5</h3><p>Projects</p></div>
+          <div class="metric"><h3>2+</h3><p>Internships</p></div>
+        </div>
+      </section>
+
+      <section class="card" id="skills">
+        <h2>Tech Skills</h2>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Java</span>
+          <span class="skill">Python</span>
+          <span class="skill">C</span>
+        </div>
+      </section>
+
+      <section class="card" id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <article class="project"><h3>Professional Portfolio </h3><p>Providing professional info.</p><div class="tag">HTML • CSS</div></article>
+          <article class="project"><h3>Creative Portfolio</h3><p>A portfolio created on space theme.</p><div class="tag">HTML • CSS  • JavaScript</div></article>
+          <article class="project"><h3>CHALCHITRAKHOJ</h3><p>A movie recommendation website.</p><div class="tag">HTML • CSS</div></article>
+          <article class="project"><h3>Website Practices</h3><p>Created many practice projects on websites.</p><div class="tag">HTML • CSS</div></article>
+        </div>
+      </section>
+
+      <section class="card" id="contact">
+        <h2>Contact</h2>
+        <form class="contact-form" onsubmit="event.preventDefault();alert('Message sent!');">
+          <div>
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Your email" style="margin-top:10px" required />
+            <textarea placeholder="Message" rows="4" style="margin-top:10px" required></textarea>
+          </div>
+          <div style="display:flex;align-items:end">
+            <button class="btn btn-primary" type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        Built by Kartik Krish • © <span id="year"></span>
+      </footer>
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

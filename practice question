@@ -1,0 +1,357 @@
+1. Basics
+
+Swap two numbers (without using a third variable).:---done
+
+
+Find the largest of three numbers.
+
+Check whether a number is even or odd.:---done
+
+
+Check if a year is a leap year.:----done
+
+
+Compute the sum of first n natural numbers.:----done
+
+
+
+Print the first n Fibonacci numbers.
+
+Compute factorial of n.
+
+Reverse the digits of an integer.
+
+Count number of digits in an integer.
+
+Check whether a number is prime.
+
+Print all prime numbers up to n.
+
+Convert Celsius to Fahrenheit and vice versa.
+
+Check whether a given character is a vowel or consonant.
+
+Generate multiplication table of a number.
+
+Determine if a number is Armstrong (narcissistic).
+
+
+2. Control Flow / Loops / Conditionals
+
+Print odd and even numbers up to n.
+
+Find sum of even and sum of odd numbers up to n.
+
+Print pattern: right triangle of * of height n.
+
+Print Pascal’s triangle up to n rows.
+
+Find GCD (greatest common divisor) of two numbers.
+
+Find LCM of two numbers.
+
+Check for perfect numbers up to n.
+
+Solve the coin change (count ways) for small denominations (combinatorics).
+
+Compute power x^y without using built-in exponent operator.
+
+
+3. Strings
+
+Reverse a string.
+
+Check if a string is a palindrome.
+
+Count vowels and consonants in a string.
+
+Count occurrences of each character in a string.
+
+Remove duplicate characters from a string preserving order.
+
+Check if two strings are anagrams.
+
+Find the first non-repeating character in a string.
+
+Find all substrings of a string.
+
+Find longest palindromic substring (simple/naive version).
+
+Reverse words in a sentence (word order).
+
+Check if a string contains only digits.
+
+Implement str.join behavior for a list of strings.
+
+
+4. Lists / Arrays
+
+Find the maximum and minimum in a list.
+
+Sum of elements in a list.
+
+Remove duplicates from a list (preserve order).
+
+Find duplicate elements and their counts.
+
+Rotate a list by k positions.
+
+Move all zeros to end preserving relative order.
+
+Merge two sorted lists into one sorted list.
+
+Find kth largest / kth smallest element (small k).
+
+Check if a list is a palindrome.
+
+Find subarray with maximum sum (Kadane’s algorithm).
+
+Product of all elements except self (without using division).
+
+Find pairs in array that sum to target.
+
+Three-sum problem (triplets summing to zero).
+
+Longest increasing subsequence (simple DP version).
+
+
+5. Tuples / Sets / Dictionaries
+
+Count frequency of items using a dictionary.
+
+Swap keys and values in a dictionary (values unique).
+
+Merge two dictionaries (with conflict resolution).
+
+Find intersection / union / difference of two sets.
+
+Check whether a list contains duplicates using a set.
+
+Group items by some property using a dictionary (e.g., group words by length).
+
+
+6. Functions / Higher-order
+
+Implement factorial using recursion and iteration.
+
+Fibonacci using recursion, iteration, and memoization.
+
+Write a function with default arguments and variable-length arguments (*args, **kwargs).
+
+Implement map, filter, reduce-like behavior manually.
+
+Write and use a lambda to sort a list of tuples by second element.
+
+Decorator that logs function execution time and arguments.
+
+Implement caching decorator (simple memoize).
+
+
+7. Recursion
+
+Compute sum of digits of a number using recursion.
+
+Reverse a string using recursion.
+
+Tower of Hanoi (print moves).
+
+Generate all permutations of a string/list using recursion.
+
+Generate combinations (n choose k) via recursion.
+
+Recursive solution for binary search on sorted list.
+
+
+8. File I/O & Exceptions
+
+Read a text file and count words, lines, characters.
+
+Copy contents from one file to another.
+
+Count occurrences of each word in a file.
+
+Read a CSV file and compute column-wise summary (sum/avg).
+
+Handle file-not-found and permission errors gracefully.
+
+Append data to file without overwriting existing contents.
+
+
+9. OOP (Object-Oriented Programming)
+
+Create a BankAccount class supporting deposit, withdraw, and transfer.
+
+Create a Rectangle class with methods for area and perimeter; demonstrate inheritance with Square.
+
+Implement Student class with methods to add marks and compute average grade.
+
+Demonstrate multiple inheritance with Flyable and Swimmable mixins.
+
+Implement encapsulation (private attributes + getters/setters).
+
+Implement class and static methods; show difference.
+
+Polymorphism: create different Shape subclasses implementing area().
+
+
+10. Data Structures (implementations)
+
+Implement a stack with push/pop/peek and show use in expression evaluation (infix→postfix).
+
+Implement queue (circular queue variant).
+
+Implement singly linked list with insert/delete/search/reverse.
+
+Implement doubly linked list operations.
+
+Implement binary tree with traversal methods (inorder, preorder, postorder).
+
+Implement simple binary search tree insertion and search.
+
+Implement hash table (basic open addressing or chaining).
+
+Implement priority queue using heap (or implement a binary heap).
+
+
+11. Algorithms (Searching & Sorting)
+
+Implement linear search and binary search (iterative/recursive).
+
+Implement bubble, selection, insertion sort.
+
+Implement merge sort and quick sort.
+
+Implement counting sort, radix sort (integer arrays).
+
+Implement topological sort for DAG (using DFS or Kahn’s algorithm).
+
+Find median of two sorted arrays (simple merge approach).
+
+
+12. Dynamic Programming
+
+Fibonacci with DP (tabulation + memoization).
+
+Coin change (minimum coins / count ways).
+
+0/1 knapsack problem (DP table).
+
+Longest common subsequence (LCS).
+
+Longest increasing subsequence (DP O(n^2) / optimized patience sort hint).
+
+Edit distance (Levenshtein distance).
+
+
+13. Graphs
+
+Represent a graph using adjacency list.
+
+BFS and DFS traversals.
+
+Detect cycle in directed and undirected graphs.
+
+Shortest path on unweighted graph (BFS).
+
+Dijkstra’s algorithm for weighted graphs (simple version).
+
+Minimum spanning tree: Kruskal or Prim (implementation-level).
+
+Connected components count.
+
+
+14. String Algorithms
+
+Implement KMP prefix table (partial match table) — conceptual / simple version.
+
+Rabin–Karp string search (rolling hash simple).
+
+Count occurrences of substring (overlapping allowed).
+
+Implement basic trie (prefix tree) insert and search.
+
+Longest common substring (DP approach).
+
+
+15. Number Theory / Math
+
+Check if two numbers are co-prime.
+
+Sieve of Eratosthenes for primes up to n.
+
+Compute modular exponentiation (a^b mod m) efficiently.
+
+Compute factorial trailing zeros (count factors of 5).
+
+Generate permutations and combinations (using math library and custom).
+
+
+16. Concurrency & Networking (basic)
+
+Demonstrate threading: a program that runs two tasks concurrently (IO-bound).
+
+Demonstrate multiprocessing for CPU-bound tasks.
+
+Simple TCP client-server echo program (socket basics).
+
+Handle thread synchronization with locks (producer-consumer example).
+
+
+17. Useful Libraries (small tasks)
+
+random: generate random password, shuffle list.
+
+datetime: calculate difference between dates; format dates.
+
+collections: use Counter, defaultdict, deque for real problems.
+
+itertools: generate permutations, combinations, product.
+
+math: gcd, lcm, factorial, sqrt usage examples.
+
+json: read/write JSON; merging JSON objects.
+
+
+18. Data Analysis (intro)
+
+Read CSV with pandas and compute column means and standard deviations.
+
+Filter rows by condition and save subset to new CSV.
+
+Group by a column and compute aggregation (sum/mean).
+
+Pivot table example.
+
+Basic plotting of a column (matplotlib).
+
+
+19. Testing & Debugging
+
+Write unit tests for a function (using unittest or pytest style).
+
+Assert-based tests for edge cases.
+
+Demonstrate common debugging approaches and using pdb (small example).
+
+
+20. Projects / Capstone problems
+
+Build a CLI calculator (with history and memory).
+
+Build a small To-Do list manager that saves data to a file.
+
+Create a Quiz app that reads questions from JSON and tracks scores.
+
+Build a simple contact manager (add/search/delete contacts saved in CSV/JSON).
+
+Web-scraper: scrape titles and links from a simple news page (using requests + BeautifulSoup).
+
+Build a mini bank system (multiple accounts, persistence to file).
+
+Build a basic REST API (Flask) that performs CRUD on a list of items.
+
+Build a simple chatbot using pattern matching (rule-based).
+
+Image batch-resizer using Pillow.
+
+Weather app that fetches data from an API and displays nicely (CLI).

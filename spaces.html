@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartik Krish — Portfolio Universe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #0a0a1a 0%, #000000 80%);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Nebula glow */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,0.2), transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(25,211,218,0.2), transparent 60%);
+      z-index: 0;
+      filter: blur(100px);
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 20px #7c5cff, 0 0 40px #19d3da;
+      z-index: 3;
+      position: relative;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .node {
+      position: absolute;
+      background: rgba(20, 20, 40, 0.8);
+      border: 1px solid #19d3da;
+      border-radius: 15px;
+      padding: 20px;
+      width: 220px;
+      color: #fff;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(25,211,218,0.6);
+      cursor: grab;
+      user-select: none;
+      z-index: 2;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .node:active {
+      cursor: grabbing;
+      transform: scale(1.05);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    h2 {
+      color: #19d3da;
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0a0a12;
+      color: #aaa;
+      font-size: 0.9rem;
+      position: fixed;
+      width: 100%;
+      bottom:0%;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+  <header>Kartik--Krish</header>
+
+  <canvas id="starCanvas"></canvas>
+  <canvas id="threadCanvas"></canvas>
+
+  <div class="node" id="edu" style="top:120px; left:100px;">
+    <h2>Education</h2>
+    <p>10th — JAC Board<br>Diploma in CSE, G.P. Buxar</p>
+  </div>
+
+  <div class="node" id="exp" style="top:300px; left:500px;">
+    <h2>Experience</h2>
+    <p>Intern at Sarvinfo Tech<br> Deloitte Internship<br>Govt. internships</p>
+  </div>
+
+  <div class="node" id="proj" style="top:500px; left:200px;">
+    <h2>Projects</h2>
+    <p>Professional Portfolio<br>Chalchitrakhoj<br>Practice websites</p>
+  </div>
+
+  <div class="node" id="bio" style="top:400px; left:800px;">
+    <h2>Bio</h2>
+    <p>Fast learner, communicator, problem solver, diplomatic, listener</p>
+  </div>
+
+  <div class="node" id="achieve" style="top:200px; left:1100px;">
+    <h2>Achievements</h2>
+    <p>Cracked internship at Multi-National Company & colleges</p>
+  </div>
+
+  <div class="node" id="skills" style="top:600px; left:600px;">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JS<br>Python, C<br>DSA, Java</p>
+  </div>
+  
+
+   <div class="node" id="ahead" style="top:500px; right:110px;">
+    <h2>Vision</h2>
+    <p>Want to be a programmer , not a coder..</p>
+  </div>
+
+  <footer>© <span id="year"></span> Kartik--Krish</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const starCanvas = document.getElementById("starCanvas");
+    const sctx = starCanvas.getContext("2d");
+    starCanvas.width = window.innerWidth;
+    starCanvas.height = window.innerHeight;
+
+    let stars = [];
+    for (let i = 0; i < 250; i++) {
+      stars.push({
+        x: Math.random() * starCanvas.width,
+        y: Math.random() * starCanvas.height,
+        radius: Math.random() * 2,
+        speed: Math.random() * 0.2 + 0.05
+      });
+    }
+
+    function drawStars() {
+      sctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+      stars.forEach(star => {
+        const colors = ["#ffffff", "#19d3da", "#7c5cff", "#ffdd57"];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        sctx.fillStyle = color;
+        sctx.beginPath();
+        sctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+        sctx.fill();
+
+        star.y += star.speed;
+        if (star.y > starCanvas.height) {
+          star.y = 0;
+          star.x = Math.random() * starCanvas.width;
+        }
+      });
+    }
+
+    // Threads canvas
+    const threadCanvas = document.getElementById("threadCanvas");
+    const ctx = threadCanvas.getContext("2d");
+    threadCanvas.width = window.innerWidth;
+    threadCanvas.height = window.innerHeight;
+
+    const nodes = [
+      document.getElementById("edu"),
+      document.getElementById("exp"),
+      document.getElementById("proj"),
+      document.getElementById("bio"),
+      document.getElementById("achieve"),
+      document.getElementById("skills"),
+    ];
+
+    let connections = [
+      ["edu","exp"],
+      ["edu","proj"],
+      ["exp","bio"],
+      ["proj","bio"],
+      ["achieve","proj"],
+      ["skills","proj"],
+      ["skills","bio"],
+      ["achieve","exp"],
+        ["achieve","ahead"],
+        ["bio","ahead"]
+      
+    ];
+
+    function getCenter(el) {
+      return {
+        x: el.offsetLeft + el.offsetWidth / 2,
+        y: el.offsetTop + el.offsetHeight / 2
+      };
+    }
+
+    function drawThreads() {
+      ctx.clearRect(0, 0, threadCanvas.width, threadCanvas.height);
+      ctx.strokeStyle = "#19d3da";
+      ctx.lineWidth = 2;
+      connections.forEach(([a,b]) => {
+        const A = getCenter(document.getElementById(a));
+        const B = getCenter(document.getElementById(b));
+        ctx.beginPath();
+        ctx.moveTo(A.x, A.y);
+        ctx.lineTo(B.x, B.y);
+        ctx.stroke();
+      });
+    }
+
+    function animate() {
+      drawStars();
+      drawThreads();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Dragging
+    let dragged = null, offsetX = 0, offsetY = 0;
+    nodes.forEach(node => {
+      node.addEventListener("mousedown", e => {
+        dragged = node;
+        offsetX = e.clientX - node.offsetLeft;
+        offsetY = e.clientY - node.offsetTop;
+        node.style.animation = "none"; // stop float while dragging
+      });
+    });
+
+    document.addEventListener("mousemove", e => {
+      if (dragged) {
+        dragged.style.left = (e.clientX - offsetX) + "px";
+        dragged.style.top = (e.clientY - offsetY) + "px";
+      }
+    });
+
+    document.addEventListener("mouseup", () => {
+      if (dragged) {
+        dragged.style.animation = "float 6s ease-in-out infinite"; // restart float
+      }
+      dragged = null;
+    });
+
+    window.addEventListener("resize", () => {
+      starCanvas.width = window.innerWidth;
+      starCanvas.height = window.innerHeight;
+      threadCanvas.width = window.innerWidth;
+      threadCanvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
